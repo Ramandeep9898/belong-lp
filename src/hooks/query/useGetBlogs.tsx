@@ -21,7 +21,7 @@ export const getBlogsList = async () => {
   }
 };
 
-const getBlogs = (options?: any) => {
+const useGetBlogs = (options?: any) => {
   return useQuery({
     queryKey: ["get_blogs"],
     queryFn: getBlogsList,
@@ -29,4 +29,4 @@ const getBlogs = (options?: any) => {
   });
 };
 
-export default getBlogs;
+export default useGetBlogs;

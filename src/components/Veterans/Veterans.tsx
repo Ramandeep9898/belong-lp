@@ -17,7 +17,7 @@ export const Veterans = () => {
       {/* Render images if needed */}
       <div className="flex-wrap mb-14 z-10 flex ">
         {images.map((image, index) => (
-          <img key={index} src={image.image.src} alt={image.alt} />
+          <Image key={index} src={image.image.src} alt={image.alt} />
         ))}
       </div>
       {/* Render description */}

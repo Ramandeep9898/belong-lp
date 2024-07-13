@@ -27,8 +27,8 @@ const GET_EARLY_ACCESS_CONFIG = [
 export const GetEarlyAccess = () => {
   return (
     <div className="flex justify-center items-center relative bg-[#FBF8F6]">
-      <Image src={getEarlyAccessBg} className="p-2 md:p-0 h-full hidden md:block"/>
-      <Image src={getInTouchMobileBg} className="md:p-0 h-full w-full  md:hidden block"/>
+      <Image alt="" src={getEarlyAccessBg} className="p-2 md:p-0 h-full hidden md:block"/>
+      <Image alt="" src={getInTouchMobileBg} className="md:p-0 h-full w-full  md:hidden block"/>
       <div className="absolute top-[100px] flex flex-col justify-center items-center max-w-[350px]">
         <h1 className="text-[#E4AE48] text-center text-2xl md:text-4xl font-extrabold mb-3">
           {HEADING}

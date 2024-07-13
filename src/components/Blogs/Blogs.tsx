@@ -2,7 +2,7 @@ import { Button } from "../Button/Button";
 import { useQuery } from "react-query";
 import { BLOG_CONFIG } from "@/config/Blogs.config";
 import { BlogCard } from "../Cards/BlogCard/BlogCard";
-import getBlogs from "@/hooks/query/useGetBlogs";
+// import getBlogs from "@/hooks/query/useGetBlogs";
 // Import Swiper React components
 import React, { useRef, useState } from 'react';
 
@@ -19,7 +19,7 @@ import { Navigation } from 'swiper/modules';
 import Link from "next/link";
 
 export const Blogs = () => {
-  const { isLoading, isError, data, error } = getBlogs()
+  // const { isLoading, isError, data, error } = getBlogs()
   // console.log(data);
 
   const { items } = BLOG_CONFIG;
@@ -31,7 +31,7 @@ export const Blogs = () => {
       </h1>
       <Swiper slidesPerView={4} navigation={true} modules={[Navigation]} className="bg-[#FBF8F6]">
         {items.slice(0, 7).map((ele, index) => (
-          <SwiperSlide>
+          <SwiperSlide key={index}>
             <BlogCard cardInfo={ele} key={index} />
           </SwiperSlide>
         ))}
