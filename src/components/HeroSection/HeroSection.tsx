@@ -31,14 +31,14 @@ export const Header = () => {
       background: "linear-gradient(130deg, #E5CDA8 9.14%, #BA9E73 72.99%)",
     }} className="relative  w-full h-screen hidden md:block">
       <Navbar />
-        <Image
-          src={headerBg}
-          alt=""
-          className="bg-no-repeat absolute w-full h-full object-cover rounded-b-xl transition-all will-change-transform duration-[2000ms] -z-1"
-          priority
-        />
+      <Image
+        src={headerBg}
+        alt=""
+        className="bg-no-repeat absolute w-full h-full object-cover rounded-b-xl transition-all will-change-transform duration-[2000ms] -z-1"
+        priority
+      />
 
-      
+
 
       <Image
         src={heroCloudsBg}
@@ -121,15 +121,22 @@ export const HeaderMobile = () => {
   return (
     <div
       className="w-full relative transition-all duration-[3000ms] md:hidden block"
-      style={{ height: isExpanded ? '100vh' : '80vh' }}
+      style={{
+        height: isExpanded ? '100vh' : '80vh',
+        background: "linear-gradient(130deg, #E5CDA8 9.14%, #BA9E73 72.99%)",
+
+      }}
     >
       {/* <Navbar/> */}
       <Image
         priority
-        src={heroBg}
+        src={headerBg}
         alt=""
         className=" h-full w-full object-cover rounded-b-xl transition-all will-change-transform duration-[3000ms]"
-        style={{ height: isExpanded ? '100vh' : '80vh' }}
+        style={{
+          background: "linear-gradient(130deg, #E5CDA8 9.14%, #BA9E73 72.99%)",
+          height: isExpanded ? '100vh' : '80vh'
+        }}
       />
 
       <Image

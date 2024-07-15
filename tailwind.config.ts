@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       
       backgroundImage: {
-        // 'gradient-to-right': 'linear-gradient(to right, rgba(255, 255, 255, 0.20) 0%, rgba(41, 48, 46, 0.20) 53%, rgba(255, 255, 255, 0.20) 100%)',
+        'gradient-to-right': 'linear-gradient(to right, rgba(255, 255, 255, 0.20) 0%, rgba(41, 48, 46, 0.20) 53%, rgba(255, 255, 255, 0.20) 100%)',
         'hero-bg':'linear-gradient(130deg, #E5CDA8 9.14%, #BA9E73 72.99%)'
       },
     },
