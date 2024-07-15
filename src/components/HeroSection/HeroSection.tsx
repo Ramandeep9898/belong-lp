@@ -31,13 +31,12 @@ export const Header = () => {
       background: "linear-gradient(130deg, #E5CDA8 9.14%, #BA9E73 72.99%)",
     }} className="relative  w-full h-screen hidden md:block">
       <Navbar />
-      <div className="relative w-full h-full">
         <Image
           src={headerBg}
           alt=""
-          className=" inset-0 object-cover bg-repeat  transition-all duration-2000ms will-change-transform -z-1"
+          className="bg-no-repeat absolute w-full h-full object-cover rounded-b-xl transition-all will-change-transform duration-[2000ms] -z-1"
+          priority
         />
-      </div>
 
       
 
