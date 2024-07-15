@@ -9,18 +9,26 @@ export const VETERANS_CONFIG = {
       {
         image: sai,
         alt: "",
+        style:"absolute left-0"
       },
       {
         image: ankur,
         alt: "",
+        style:"absolute right-0"
+
       },
       {
         image: ayush,
         alt: "",
+        style:"absolute bottom-0"
+
       },
       {
         image: savitri,
         alt: "",
+
+        style:"absolute right-0 bottom-0"
+
       },
     ],
     description:

@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  /* font-family: "--font-garnett"; */
   
 }
 
@@ -135,3 +136,22 @@
   @apply opacity-40 transition-opacity duration-300;
 }
 
+@keyframes oscillate {
+  0%, 100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, -20px); /* Adjust the value as needed */
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.fade-in-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -8,10 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        // 'gradient-to-right': 'linear-gradient(to right, rgba(255, 255, 255, 0.20) 0%, rgba(41, 48, 46, 0.20) 53%, rgba(255, 255, 255, 0.20) 100%)',
+        'hero-bg':'linear-gradient(130deg, #E5CDA8 9.14%, #BA9E73 72.99%)'
       },
     },
   },

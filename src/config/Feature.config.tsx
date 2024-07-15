@@ -10,14 +10,14 @@ export const FEATURES_INFO = [
     subHeading: "on all India spends",
     logo: cashBack,
     borderStyle:
-      "md:pb-[1px] md:bg-gradient-to-tr md:from-white md:via-[#29302E33] md:to-[#29302E33] border-none",
+      "",
   },
   {
     heading: "Metal card",
     subHeading: "For the premium spenders",
     logo: card,
     borderStyle:
-      "md:pl-[1px] md:bg-gradient-to-b md:from-white md:via-[#29302E33] md:to-[#29302E33] border-none",
+      "pl-[1px]  bg-gradient-to-b  from-white  via-[#29302E33]  to-[#29302E33] border-none",
     image: "",
   },
   {
@@ -25,7 +25,7 @@ export const FEATURES_INFO = [
     subHeading: "So you are stress free when you spend",
     logo: zeroForexFree,
     borderStyle:
-      "md:pr-[1.5px] md:bg-gradient-to-bl md:from-[#29302E33]  md:via-white md:to-white border-none",
+      "pr-[1.5px]  bg-gradient-to-bl  from-[#29302E33]   via-white  to-white border-none",
     image: "",
   },
   {
@@ -33,7 +33,7 @@ export const FEATURES_INFO = [
     subHeading: "Spend more, Win more",
     logo: reward,
     borderStyle:
-      "md:pt-[1px] md:bg-gradient-to-tr md:from-white md:via-[#29302E33] md:to-[#29302E33] border-none",
+      " pt-[1px]  bg-gradient-to-tr  from-white  via-[#29302E33]  to-[#29302E33] border-none",
     image: "",
   },
 ];

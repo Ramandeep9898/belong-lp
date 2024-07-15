@@ -20,9 +20,9 @@ const FOOTER_CONFIG = {
 export const Footer = () => {
   const { logo, title, links, copyright } = FOOTER_CONFIG;
   return (
-    <div className="bg-[#34335A] pt-[75px] pb-11 flex flex-col justify-center items-center">
+    <div className="bg-[#34335A] pt-[75px] pb-11 px-9 flex flex-col justify-center items-center">
       <Image src={logo} alt="" className="mb-12"/>
-      <h1 className="text-3xl font-extrabold max-w-[450px] text-center text-[#fff] mb-28">{title}</h1>
+      <h1 className="text-3xl font-extrabold max-w-[450px] text-center text-[#fff] mb-[28px]">{title}</h1>
 
       <div className="flex mb-12">
       {links.map((link, index)=>(
