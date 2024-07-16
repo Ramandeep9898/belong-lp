@@ -47,8 +47,8 @@ export const FeatureCard = ({ cardInfo, index }: any) => {
       <div className="flex pb-6 w-full bg-[#FBF8F6] justify-start items-center  gap-6">
         <Image src={logo} alt="" />
         <div className="">
-          <h1 className="whitespace-nowrap text-[#2A2B2B] font-extrabold text-[22px] md:text-[28px]">{heading}</h1>
-          <h2 className="text-[#1D1D1D] text-sm">{subHeading}</h2>
+          <h1 className="whitespace-nowrap font-garnett text-[#2A2B2B] font-extrabold text-[22px] md:text-[28px]">{heading}</h1>
+          <h2 className="text-[#1D1D1D] font-normal font-garnett text-sm">{subHeading}</h2>
         </div>
       </div>
     </div>

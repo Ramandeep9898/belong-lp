@@ -6,8 +6,8 @@ import buildingOne from "@/assets/buildingOne.svg";
 import buildingTwo from "@/assets/buildingTwo.svg";
 // import card from "@/assets/heroCard.svg";
 import Image from "next/image";
-import { Button } from "../Button/Button";
-import { Navbar } from "../Navbar/Navbar";
+import { Button } from "../../Button/Button";
+import { Navbar } from "../../Navbar/Navbar";
 import cloudMobile from "@/assets/cloudsMobile.svg"
 import React, { useState, useEffect } from 'react';
 import mobileBuilding from "@/assets/mobileBuildings.svg"
@@ -30,7 +30,7 @@ export const Header = () => {
   return (
     <div style={{
       background: "linear-gradient(130deg, #E5CDA8 9.14%, #BA9E73 72.99%)",
-    }} className="relative  w-full h-screen hidden md:block">
+    }} className="relative font-[var(--font-garnett)] w-full h-screen hidden md:block">
       <Navbar />
       <Image
         src={headerBg}
@@ -38,9 +38,6 @@ export const Header = () => {
         className="bg-no-repeat absolute w-full h-full object-cover rounded-b-xl transition-all will-change-transform duration-[2000ms] -z-1"
         priority
       />
-
-
-
       <Image
         src={heroCloudsBg}
         alt=""
@@ -75,11 +72,11 @@ export const Header = () => {
         }}
       />
       <div className="absolute top-0 flex w-full justify-center items-center z-20 flex-col">
-        <h1 className="font-sans font-extrabold text-6xl w-[400px] text-center mb-16 mt-20 text-[#2D2D2C]">
+        <h1 className="text-6xl font-garnett font-black w-[400px] text-center mb-16 mt-20 text-[#2D2D2C]">
           {Heading}
         </h1>
         <div className="relative">
-          <Button size={"lg"} className="z-10 relative">Get Early Access</Button>
+          <Button size={"lg"} className="z-10  font-garnett relative ">Get Early Access</Button>
           <Image className="absolute bottom-[-10px] z-0" src={BtnShadow} alt="" />
         </div>
 
@@ -181,7 +178,7 @@ export const HeaderMobile = () => {
               alt=""
             />
           </div>
-          <h1 className="relative font-extrabold text-5xl w-[310px] text-center mb-16 mt-20 text-[#2D2D2C] transition-all will-change-transform duration-[3000ms]"
+          <h1 className="relative  font-garnett font-extrabold text-5xl w-[310px] text-center mb-16 mt-20 text-[#2D2D2C] transition-all will-change-transform duration-[3000ms]"
             style={{
               top: isExpanded ? '-800px' : '30px'
             }}
@@ -202,7 +199,7 @@ export const GetEarlyAccessMobile = () => {
       <Button style={{
         filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))"
 
-      }} size={"lg"} className="relative backdrop-blur z-10 text-lg">Get Early Access</Button>
+      }} size={"lg"} className="relative backdrop-blur  font-garnett z-10 text-base">Get Early Access</Button>
       {/* <Image className="absolute bottom-[-10px] z-0" src={BtnShadow} alt=""/> */}
 
     </div>

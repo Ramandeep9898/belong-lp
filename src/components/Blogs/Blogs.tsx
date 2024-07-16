@@ -24,7 +24,7 @@ export const Blogs = () => {
 
   return (
     <div className="bg-[#FBF8F6] z-0 flex  justify-center flex-col items-center pt-[60px] md:px-28">
-      <h1 className="text-black font-extrabold text-3xl mb-12">
+      <h1 className="text-black  font-garnett font-extrabold text-3xl mb-12">
         Stay Informed
       </h1>
 
@@ -40,7 +40,7 @@ export const Blogs = () => {
 
 
       <Link target="_blank" href={"https://getbelong.com/blog"} className="mb-4">
-        <Button variant="outline" size={"sm"} className="mt-16">View all blogs</Button>
+        <Button variant="outline" size={"sm"} className="mt-16  font-garnett">View all blogs</Button>
       </Link>
     </div>
   );

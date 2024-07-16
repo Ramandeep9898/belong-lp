@@ -10,10 +10,10 @@ export const Navbar = () =>{
             <Image src={logo} alt="" className="w-28"/>
             <div className="flex gap-8">
                 <Link href={" https://getbelong.com/blog"}>
-                <Button variant={"ghost"}>Blogs</Button>
+                <Button variant={"ghost"} className=" font-garnett">Blogs</Button>
                 
                 </Link>
-                <Button>Get Early Access</Button>
+                <Button className=" font-garnett">Get Early Access</Button>
 
             </div>
         </nav>

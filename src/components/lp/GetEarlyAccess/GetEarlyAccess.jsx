@@ -41,7 +41,7 @@ export const GetEarlyAccess = () => {
             <Input key={index} variant={ele.variant} placeholder={ele.placeHolder} />
           ))}
         </div>
-        <Button className="w-fit" size="lg">Get Early Access</Button>
+        <Button className="w-fit  font-garnett" size="lg">Get Early Access</Button>
 
       </div>
     </div>
