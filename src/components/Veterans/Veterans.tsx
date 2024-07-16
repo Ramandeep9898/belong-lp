@@ -1,13 +1,12 @@
-import React from "react";
 import bgImage from "@/assets/particalsEffect.svg";
 import Image from "next/image";
 import { VETERANS_CONFIG } from "@/config/Veterans.config";
-import ankur from "@/assets/veteransAnkur.svg";
-import ayush from "@/assets/veteransAyush.svg";
-import savitri from "@/assets/veteransSavitri.svg";
-import sai from "@/assets/veteransSai.svg";
 import vetHeader from "@/assets/vetHeader.svg"
 import vetHeaderMobile from "@/assets/vetMobile.svg"
+import ankur from "@/assets/lp/veterans/ankur.png";
+import ayush from "@/assets/lp/veterans/ayush.png";
+import savitri from "@/assets/lp/veterans/savitri.png";
+import sai from "@/assets/lp/veterans/sai.png"; 
 
 export const Veterans = () => {
   const { title, images, description } = VETERANS_CONFIG;
