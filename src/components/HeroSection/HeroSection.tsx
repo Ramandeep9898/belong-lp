@@ -4,7 +4,7 @@ import logo from "@/assets/logoBlackNav.svg"
 import heroCloudsBg from "@/assets/clouds.svg";
 import buildingOne from "@/assets/buildingOne.svg";
 import buildingTwo from "@/assets/buildingTwo.svg";
-import card from "@/assets/heroCard.svg";
+// import card from "@/assets/heroCard.svg";
 import Image from "next/image";
 import { Button } from "../Button/Button";
 import { Navbar } from "../Navbar/Navbar";
@@ -13,6 +13,7 @@ import React, { useState, useEffect } from 'react';
 import mobileBuilding from "@/assets/mobileBuildings.svg"
 import { IoMenuOutline } from "react-icons/io5";
 import BtnShadow from "@/assets/shadow.svg"
+import card from "@/assets/lp/hero/card.png"
 
 
 const Heading = "First NRI focused  card";
@@ -49,7 +50,6 @@ export const Header = () => {
           top: isExpanded ? '6rem' : '7rem'
         }}
       />
-
       <Image
         src={buildingOne}
         alt=""
