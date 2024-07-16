@@ -11,7 +11,7 @@ export const Features = () => {
         <p className="mb-4">{FEATURES_SECTION_HEADING}</p>
         <Image src={Logo} alt="" width={200} className="mb-10 md:mb-4" />
       </div>
-      <div className="flex md:max-w-[800px] flex-wrap gap-6 md:gap-0 justify-center items-center">
+      <div className="flex w-[300px] md:w-[800px] flex-wrap  gap-6 md:gap-0 justify-center items-center">
         {FEATURES_INFO.map((item, index) => (
           <FeatureCard key={index} cardInfo={item} index={index}/>
         ))}
