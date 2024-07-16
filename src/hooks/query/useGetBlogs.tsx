@@ -2,7 +2,6 @@ import { useQuery } from "react-query";
 import { GET_BLOGS } from "@/utils/endpoints";
 
 export const getBlogsList = async () => {
-  console.log("hi");
   
   try {
     const response = await fetch(GET_BLOGS);
@@ -12,7 +11,6 @@ export const getBlogsList = async () => {
     }
 
     const data = await response.json();
-    console.log("data", data); 
 
     return data; 
     } catch (error) {

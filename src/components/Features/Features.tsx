@@ -13,7 +13,7 @@ export const Features = () => {
       </div>
       <div className="flex md:max-w-[800px] flex-wrap gap-6 md:gap-0 justify-center items-center">
         {FEATURES_INFO.map((item, index) => (
-          <FeatureCard key={index} cardInfo={item} />
+          <FeatureCard key={index} cardInfo={item} index={index}/>
         ))}
       </div>
     </div>

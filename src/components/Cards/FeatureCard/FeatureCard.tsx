@@ -8,7 +8,7 @@ type FeatureCardPropType = {
   borderStyle: string;
 };
 
-export const FeatureCard = ({ cardInfo }: any) => {
+export const FeatureCard = ({ cardInfo, index }: any) => {
   const cardRef = useRef(null);
 
   useEffect(() => {
@@ -43,7 +43,7 @@ export const FeatureCard = ({ cardInfo }: any) => {
     <div ref={cardRef} style={{
       // background: "linear-gradient(90deg, rgba(255, 255, 255, 0.20) 0%, rgba(41, 48, 46, 0.20) 53%, rgba(255, 255, 255, 0.20) 100%)"
 
-    }} className={`md:basis-1/2 bg-gradient-to-right md:bg-none max-w-[300px] fade-in pb-[1px]  `}>
+    }} className={index === 3 ? "md:basis-1/2 bg-none max-w-[300px] fade-in pb-[1px]" :"md:basis-1/2 bg-gradient-to-right md:bg-none max-w-[300px] fade-in pb-[1px]"}>
       <div className="flex pb-6 bg-[#FBF8F6] justify-start items-center  gap-6">
         <Image src={logo} alt="" />
         <div className="">

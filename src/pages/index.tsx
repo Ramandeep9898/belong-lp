@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <div className="w-fit md:w-auto">
+    <div className="">
       <Header/>
       <HeaderMobile/>
       <GetEarlyAccessMobile/>
