@@ -1,7 +1,7 @@
 import { Button } from "../Button/Button";
 import { BLOG_CONFIG } from "@/config/Blogs.config";
 import { BlogCard } from "../Cards/BlogCard/BlogCard";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, MutableRefObject } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { isMobileScreen } from "@/utils/isMobileScreen";
 import { useSwiper } from "swiper/react";
@@ -17,7 +17,7 @@ const SwiperButtonNext = ({ children }: any) => {
   return (
     <button
       onClick={() => swiper.slideNext()}
-      className="w-10 absolute right-0  rounded-full bg-[#F2D9B5] border-[#D8C09F] border-[1px] border-solid p-3 color-[#0E424A]"
+      className="w-10 absolute right-0 rounded-full bg-[#F2D9B5] border-[#D8C09F] border-[1px] border-solid p-3 color-[#0E424A]"
     >
       {children}
       <FaArrowRightLong />
@@ -30,7 +30,7 @@ const SwiperButtonPrevious = ({ children }: any) => {
   return (
     <button
       onClick={() => swiper.slidePrev()}
-      className="w-10  absolute left-0   rounded-full rotate-180 bg-[#F2D9B5] border-[#D8C09F] border-[1px] border-solid p-3 color-[#0E424A]"
+      className="w-10 absolute left-0 rounded-full rotate-180 bg-[#F2D9B5] border-[#D8C09F] border-[1px] border-solid p-3 color-[#0E424A]"
     >
       {children}
       <FaArrowRightLong />
@@ -38,11 +38,11 @@ const SwiperButtonPrevious = ({ children }: any) => {
   );
 };
 
-export const Blogs = () => {
+export const Blogs: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   const { items } = BLOG_CONFIG;
 
-  const swiperRef = useRef();
+  const swiperRef: MutableRefObject<any> = useRef(null);
 
   useEffect(() => {
     setIsMobile(() => isMobileScreen());
@@ -50,8 +50,8 @@ export const Blogs = () => {
   // const { isLoading, isError, data, error } = getBlogs()
 
   return (
-    <div className="bg-[#FBF8F6] z-0 flex  justify-center flex-col items-center pt-[60px] md:px-28">
-      <h1 className="text-black  font-garnett font-extrabold text-3xl mb-12">
+    <div className="bg-[#FBF8F6] z-0 flex justify-center flex-col items-center pt-[60px] md:px-28">
+      <h1 className="text-black font-garnett font-extrabold text-3xl mb-12">
         Stay Informed
       </h1>
 
@@ -68,37 +68,31 @@ export const Blogs = () => {
         >
           {items.slice(0, 7).map((ele, index) => (
             <SwiperSlide key={index}>
-              <BlogCard cardInfo={ele} key={index} />
+              <BlogCard cardInfo={ele} />
             </SwiperSlide>
           ))}
         </Swiper>
 
         {/* //TODO: make icon btn  */}
         <div className="relative top-[-140px]">
+          <button
+            onClick={() => swiperRef.current?.slideNext()}
+            className="hidden md:block w-10 absolute right-[-60px] rounded-full bg-[#F2D9B5] border-[#D8C09F] border-[1px] border-solid p-3 color-[#0E424A]"
+          >
+            <FaArrowRightLong />
+          </button>
 
-        <button
-          onClick={() => swiperRef!.current!.slideNext()}
-          className="hidden md:block w-10 absolute right-[-60px] rounded-full bg-[#F2D9B5] border-[#D8C09F] border-[1px] border-solid p-3 color-[#0E424A]"
-        >
-          <FaArrowRightLong />
-        </button>
-
-        <button
-          onClick={() => swiperRef!.current!.slidePrev()}
-          className="hidden md:block w-10 absolute left-[-60px] rotate-180  rounded-full bg-[#F2D9B5] border-[#D8C09F] border-[1px] border-solid p-3 color-[#0E424A]"
-        >
-          <FaArrowRightLong />
-        </button>
+          <button
+            onClick={() => swiperRef.current?.slidePrev()}
+            className="hidden md:block w-10 absolute left-[-60px] rotate-180 rounded-full bg-[#F2D9B5] border-[#D8C09F] border-[1px] border-solid p-3 color-[#0E424A]"
+          >
+            <FaArrowRightLong />
+          </button>
         </div>
-
       </div>
 
-      <Link
-        target="_blank"
-        href={"https://getbelong.com/blog"}
-        className="mb-4"
-      >
-        <Button variant="outline" size={"sm"} className="mt-16  font-garnett">
+      <Link target="_blank" href={"https://getbelong.com/blog"} className="mb-4">
+        <Button variant="outline" size={"sm"} className="mt-16 font-garnett">
           View all blogs
         </Button>
       </Link>
