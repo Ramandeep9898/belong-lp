@@ -1,3 +1,6 @@
+import buildingsLeft from "@/assets/lp/hero/buildingsLeft.png"
+import buildingsRight from "@/assets/lp/hero/buildingsRight.png"
+
 import headerBg from "@/assets/hero-texture.png";
 import heroBg from "@/assets/heroBg.svg";
 import logo from "@/assets/logoBlackNav.svg"
@@ -20,70 +23,117 @@ const Heading = "First NRI focused  card";
 
 export const Header = () => {
   const [isExpanded, setIsExpanded] = useState(true);
+  const [scrollY, setScrollY] = useState(0);
+  const [isTransition, setIsTransition] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
       setIsExpanded(false)
-    }, 50)
+    }, 50);
+    setTimeout(() => {
+      setIsTransition(false)
+    }, 3500);
   }, []);
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+
 
   return (
     <div style={{
       background: "linear-gradient(130deg, #E5CDA8 9.14%, #BA9E73 72.99%)",
-    }} className="relative font-[var(--font-garnett)] w-full h-screen hidden md:block">
-      <Navbar />
+    }} className="flex justify-center items-center w-full">
       <Image
         src={headerBg}
         alt=""
         className="bg-no-repeat absolute w-full h-full object-cover rounded-b-xl transition-all will-change-transform duration-[2000ms] -z-1"
         priority
       />
-      <Image
-        src={heroCloudsBg}
-        alt=""
-        className="absolute w-full object-cover rounded-b-xl transition-all will-change-transform duration-[2000ms]"
-        style={{
-          opacity: isExpanded ? 0 : 1,
-          top: isExpanded ? '6rem' : '7rem'
-        }}
-      />
-      <Image
-        src={buildingOne}
-        alt=""
-        className="absolute left-0 w-[500px] object-cover rounded-b-xl transition-all will-change-transform duration-[2000ms]"
-        style={{
-          bottom: isExpanded ? '-250px' : '-1px'
-        }}
-      />
-      <Image
-        src={buildingTwo}
-        alt=""
-        className="absolute w-[500px] right-0 object-cover rounded-b-xl transition-all will-change-transform duration-[2000ms]"
-        style={{
-          bottom: isExpanded ? '-250px' : '-1px'
-        }}
-      />
-      <Image
-        src={card}
-        alt=""
-        className={`absolute rotate-[2deg] h-[530px] w-[300px]  md:left-[53%] left-[41%] object-cover rounded-b-xl transition-all will-change-transform duration-[2000ms] animate-[oscillate_2s_infinite_cubic-bezier(0.42,0,0.58,1)]`}
-        style={{
-          bottom: isExpanded ? '-400px' : '-175px'
-        }}
-      />
-      <div className="absolute top-0 flex w-full justify-center items-center z-20 flex-col">
-        <h1 className="text-6xl font-garnett font-black w-[400px] text-center mb-16 mt-20 text-[#2D2D2C]">
-          {Heading}
-        </h1>
-        <div className="relative">
-          <Button size={"lg"} className="z-10  font-garnett relative ">Get Early Access</Button>
-          <Image className="absolute bottom-[-10px] z-0" src={BtnShadow} alt="" />
-        </div>
+      <div className="2xl:w-[1500px] relative font-[var(--font-garnett)] w-full h-screen hidden md:block">
 
+        <Navbar />
+
+        <Image
+          src={heroCloudsBg}
+          alt=""
+          className="absolute w-full object-cover rounded-b-xl transition-all will-change-transform duration-[2000ms]"
+          style={{
+            opacity: isExpanded ? 0 : 1,
+            top: isExpanded ? '6rem' : '7rem'
+          }}
+          priority
+
+        />
+        <Image
+          src={buildingsLeft}
+          alt=""
+          // className="absolute left-0 w-[500px] object-cover rounded-b-xl transition-all will-change-transform duration-[2000ms]"
+          // style={{
+          //   bottom: isExpanded ? '-250px' : '-1px'
+          // }}
+
+          className={`absolute bottom-[-50px] left-0 w-[500px] object-cover z-30 rounded-b-xl ${isTransition ? 'transition-all' : 'transition-none'} will-change-transform duration-[3000ms]`}
+          style={{
+            // transition: isTransition ? 'all' : 'none',
+            bottom: isExpanded ? '-250px' : `-${Math.min(40, scrollY / 4)}px`
+          }}
+          priority
+
+        />
+        <Image
+          src={buildingsRight}
+          alt=""
+          // className="absolute w-[500px] right-0 object-cover rounded-b-xl transition-all will-change-transform duration-[2000ms]"
+          // style={{
+          //   bottom: isExpanded ? '-250px' : '-1px'
+          // }}
+
+          className={`absolute bottom-[-50px] right-0 w-[500px] object-cover z-30 rounded-b-xl ${isTransition ? 'transition-all' : 'transition-none'} will-change-transform duration-[3000ms]`}
+          style={{
+            // transition: isTransition ? 'all' : 'none',
+            bottom: isExpanded ? '-250px' : `-${Math.min(40, scrollY / 4)}px`
+          }}
+          priority
+
+        />
+        <Image
+          src={card}
+          alt=""
+          // className={`absolute h-[530px] w-[300px] md:w-[350px] md:h-[400px]  md:left-[53%] left-[41%] object-cover rounded-b-xl transition-all will-change-transform duration-[2000ms] animate-[oscillate_2s_infinite_cubic-bezier(0.42,0,0.58,1)]`}
+          // style={{
+          //   bottom: isExpanded ? '-400px' : '0%'
+          // }}
+
+          className={`absolute left-[52%] transform -translate-x-1/2 w-[310px] z-20 object-cover rounded-b-xl ${isTransition ? 'transition-all' : 'transition-none'} will-change-transform duration-[2000ms] ${scrollY < 256 ? 'animate-[oscillate_2s_infinite_cubic-bezier(0.42,0,0.58,1)]' : 'rotate-[-17deg] duration-[8000ms] transition-all'}`}
+          style={{
+            bottom: isExpanded ? '-750px' : `-${Math.min(200, scrollY / 2)}px`
+
+          }}
+          priority
+
+        />
+        <div className="absolute top-0 flex w-full justify-center items-center z-20 flex-col">
+          <h1 className="text-6xl font-garnett font-black w-[400px] md:w-[500px] text-center mb-16 mt-20 text-[#2D2D2C]">
+            {Heading}
+          </h1>
+          <div className="relative">
+            <Button size={"lg"} className="z-10  font-garnett relative ">Get Early Access</Button>
+            <Image className="absolute bottom-[-10px] z-0" src={BtnShadow} alt="" />
+          </div>
+
+        </div>
       </div>
 
-      <div
-        className="absolute bg-gradient-to-tr from-[#FFED8C] via-[#D5BC96] to-[#D5BC96] bottom-0  h-10 rounded-b-xl w-full"></div>
     </div>
   );
 };
@@ -195,11 +245,11 @@ export const HeaderMobile = () => {
 
 export const GetEarlyAccessMobile = () => {
   return (
-    <div className="w-full fixed z-[40050]  flex justify-center items-center mt-6 ">
+    <div className="w-full fixed z-[40050]  flex justify-center items-center mt-6 md:hidden">
       <Button style={{
         filter: "drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))"
 
-      }} size={"lg"} className="relative backdrop-blur  font-garnett z-10 text-base">Get Early Access</Button>
+      }} size={"lg"} className="relative backdrop-blur  font-garnett z-10 text-base ">Get Early Access</Button>
       {/* <Image className="absolute bottom-[-10px] z-0" src={BtnShadow} alt=""/> */}
 
     </div>

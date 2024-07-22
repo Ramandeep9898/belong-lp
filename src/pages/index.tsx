@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import { Features } from "@/components/lp/Features/Features";
-import {GetEarlyAccess} from "@/components/lp/GetEarlyAccess/GetEarlyAccess"
+import { GetEarlyAccess } from "@/components/lp/GetEarlyAccess/GetEarlyAccess"
 import { Header } from "@/components/lp/HeroSection/HeroSection";
 import Veterans from "@/components/lp/Veterans/Veterans";
 import { Footer } from "@/components/lp/Footer/Footer";
@@ -12,14 +12,19 @@ import { GetEarlyAccessMobile } from "@/components/lp/HeroSection/HeroSection";
 export default function Home() {
   return (
     <div className="">
-      <Header/>
-      <HeaderMobile/>
-      <GetEarlyAccessMobile/>
-      <Features/>
+      <Header />
+      <HeaderMobile />
+      <GetEarlyAccessMobile />
+      <Features />
       {/* <GetEarlyAccess /> */}
-      <Blogs/>
-      <Veterans/>
-      <Footer/>
+      {/* <div className="flex justify-center bg-[#FBF8F6]"> */}
+        {/* <div className=""> */}
+          <Blogs />
+        {/* </div> */}
+      {/* </div> */}
+
+      <Veterans />
+      <Footer />
     </div>
   );
 }

@@ -28,7 +28,7 @@ export const Blogs = () => {
         Stay Informed
       </h1>
 
-      <div className="w-full block">
+      <div className="w-full block lg:w-full xl:w-[1100px]">
         <Swiper slidesPerView={isMobile ? 1.4 : 4} spaceBetween={0} navigation={true} modules={[Navigation]} className="z-40  bg-[#FBF8F6]">
           {items.slice(0, 7).map((ele, index) => (
             <SwiperSlide key={index}>
@@ -42,6 +42,7 @@ export const Blogs = () => {
       <Link target="_blank" href={"https://getbelong.com/blog"} className="mb-4">
         <Button variant="outline" size={"sm"} className="mt-16  font-garnett">View all blogs</Button>
       </Link>
+
     </div>
   );
 };

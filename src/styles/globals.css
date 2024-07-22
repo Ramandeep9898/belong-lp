@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  box-sizing: border-box;
+}
+
+
 /* @font-face {
   font-family: 'garnett';
   src: url('../../public/fonts/Garnett-Black.woff') format('woff');
@@ -155,6 +160,10 @@
   50% {
     transform: translate(-50%, -20px); /* Adjust the value as needed */
   }
+}
+
+.rotate {
+  transition: transform 2s cubic-bezier(0.42, 0, 0.58, 1);
 }
 
 .fade-in {
