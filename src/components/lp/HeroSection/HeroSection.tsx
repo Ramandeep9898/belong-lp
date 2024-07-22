@@ -1,6 +1,7 @@
 import buildingsLeft from "@/assets/lp/hero/buildingsLeft.png"
 import buildingsRight from "@/assets/lp/hero/buildingsRight.png"
-
+import cloudsLeft from "@/assets/lp/hero/cloudsLeft.png"
+import cloudsRight from "@/assets/lp/hero/cloudsRight.png"
 import headerBg from "@/assets/hero-texture.png";
 import heroBg from "@/assets/heroBg.svg";
 import logo from "@/assets/logoBlackNav.svg"
@@ -63,7 +64,7 @@ export const Header = () => {
 
         <Navbar />
 
-        <Image
+        {/* <Image
           src={heroCloudsBg}
           alt=""
           className="absolute w-full object-cover rounded-b-xl transition-all will-change-transform duration-[2000ms]"
@@ -73,7 +74,16 @@ export const Header = () => {
           }}
           priority
 
-        />
+        /> */}
+        <div className="relative w-full object-cover rounded-b-xl transition-all will-change-transform duration-[2000ms]"
+         style={{
+          opacity: isExpanded ? 0 : 1,
+          top: isExpanded ? '6rem' : '7rem'
+        }}
+        >
+          <Image src={cloudsLeft} alt="cloud" className="absolute left-0"/>
+          <Image src={cloudsRight} alt="cloud" className="absolute right-0"/>
+        </div>
         <Image
           src={buildingsLeft}
           alt=""
@@ -187,6 +197,7 @@ export const HeaderMobile = () => {
       />
 
       <Image
+      priority
         src={cloudMobile}
         alt=""
         className="absolute  bottom-36 w-full objex1ct-cover rounded-b-xl z-20 transition-all will-change-transform duration-[3000ms]"
@@ -197,6 +208,7 @@ export const HeaderMobile = () => {
       />
 
       <Image
+      priority
         src={mobileBuilding}
         alt=""
         className={`absolute bottom-[-100px] left-0 w-[500px] object-cover z-30 rounded-b-xl ${isTransition ? 'transition-all' : 'transition-none'} will-change-transform duration-[3000ms]`}
@@ -207,6 +219,7 @@ export const HeaderMobile = () => {
       />
 
       <Image
+      priority
         src={card}
         alt=""
         className={`absolute left-[52%] transform -translate-x-1/2 w-[310px] z-20 object-cover rounded-b-xl ${isTransition ? 'transition-all' : 'transition-none'} will-change-transform duration-[2000ms] ${scrollY < 256 ? 'animate-[oscillate_2s_infinite_cubic-bezier(0.42,0,0.58,1)]' : ''}`}
