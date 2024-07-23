@@ -23,6 +23,11 @@ export const Footer = () => {
   const { logo, title, links, copyright } = FOOTER_CONFIG;
   return (
     <div className="bg-[#34335A] w-full pt-[75px] relative pb-11 px-9 flex flex-col justify-center items-center">
+      <div style={{
+        background:`url(${footerBorder.src})`
+      }} className="w-full hidden md:block h-8 absolute top-[-15px]">
+
+      </div>
       <Image src={footerBorder} alt="" className="absolute top-[-15px] w-full md:hidden" />
       <Image src={logo} alt="" className="mb-12" />
       <div className="2xl:w-[1500px] flex w-full items-center justify-center flex-col">
