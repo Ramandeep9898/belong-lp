@@ -1,0 +1,1 @@
+export const GET_BLOGS = "https://getbelong.com/blog/rss.json"
