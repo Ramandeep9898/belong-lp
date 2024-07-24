@@ -49,7 +49,7 @@ export const Header = () => {
       className="flex justify-center items-center w-full"
     >
       <div
-        className="flex justify-center items-center w-full "
+        className="flex justify-center items-center w-full shadow-[inset_0_-2px_4px_2px_rgba(0,0,0,0.4)]"
         style={{
           background: `url(${bgTexture.src})`,
         }}
@@ -104,7 +104,7 @@ export const Header = () => {
           <Image
             src={card}
             alt=""
-            className={`absolute left-[52%] transform -translate-x-1/2 w-[310px] z-20 object-cover rounded-b-xl ${
+            className={`absolute left-[52%] transform -translate-x-1/2 w-[450px] z-20 object-cover rounded-b-xl ${
               isTransition ? "transition-all" : "transition-none"
             } will-change-transform duration-[2000ms] ${
               scrollY < 256
@@ -117,12 +117,14 @@ export const Header = () => {
                 : `-${Math.min(200, scrollY / 2)}px`,
             }}
             priority
+            height={400}
+            width={400}
           />
           <div className="absolute top-0 flex w-full justify-center items-center z-20 flex-col">
-            <h1 className="text-6xl font-garnett font-black w-[400px] md:w-[500px] text-center mb-16 mt-20 text-[#2D2D2C]">
+            <h1 className="text-6xl font-garnett font-black w-[450px] md:w-[500px] text-center mb-16 mt-36 text-[#2D2D2C]">
               {Heading}
             </h1>
-            <div className="relative">
+            {/* <div className="relative">
               <Button size={"lg"} className="z-10  font-garnett relative ">
                 Get Early Access
               </Button>
@@ -131,7 +133,7 @@ export const Header = () => {
                 src={BtnShadow}
                 alt=""
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

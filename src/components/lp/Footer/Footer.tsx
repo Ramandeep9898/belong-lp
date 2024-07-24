@@ -31,7 +31,7 @@ export const Footer = () => {
       <Image src={footerBorder} alt="" className="absolute top-[-15px] w-full md:hidden" />
       <Image src={logo} alt="" className="mb-12" />
       <div className="2xl:w-[1500px] flex w-full items-center justify-center flex-col">
-        <h1 className="text-3xl font-bold max-w-[450px]  font-garnett text-center text-[#fff] mb-[28px]">{title}</h1>
+        <h1 className="text-4xl font-bold max-w-[500px]  font-garnett text-center text-[#fff] mb-[100px]">{title}</h1>
         <div className="flex mb-12">
           {links.map((link, index) => (
             <div key={index} className={index !== links.length - 1 ? "border-r-[1.5px] pr-6 border-solid border-[#AEADBD] leading-[1]" : "pl-6 leading-[1]"}>

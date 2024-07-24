@@ -24,8 +24,8 @@ export const Veterans = () => {
         alt=""
         className="w-full md:hidden object-cover"
       />
-      <div className="p-7 z-10 flex flex-col justify-center items-center">
-        <h1 className="text-[28px] md:text-3xl font-garnett font-extrabold text-[#232222] z-10 mb-14 max-w-[400px] text-center">
+      <div className="p-7 pt-0 z-10 flex flex-col justify-center items-center">
+        <h1 className="text-[28px] md:text-3xl font-garnett font-bold text-[#232222] z-10 mb-14 max-w-[400px] text-center">
           {title}
         </h1>
         {/* <div className=" flex flex-wrap relative mb-14 !w-[285px] h-[350px] md:static md:!w-auto md:h-auto">

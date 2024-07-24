@@ -51,7 +51,7 @@ export const Blogs: React.FC = () => {
 
   return (
     <div className="bg-[#FBF8F6] z-0 flex justify-center flex-col items-center pt-[60px] md:px-28">
-      <h1 className="text-black font-garnett font-extrabold text-3xl mb-12">
+      <h1 className="text-black font-garnett font-bold text-3xl mb-12">
         Stay Informed
       </h1>
 
