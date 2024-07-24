@@ -14,7 +14,7 @@ export default function Home() {
     <div className="">
       <Header />
       <HeaderMobile />
-      <GetEarlyAccessMobile />
+      {/* <GetEarlyAccessMobile /> */}
       <Features />
       {/* <GetEarlyAccess /> */}
       {/* <div className="flex justify-center bg-[#FBF8F6]"> */}
