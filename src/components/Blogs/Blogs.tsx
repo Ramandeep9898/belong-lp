@@ -4,42 +4,24 @@ import { BlogCard } from "../Cards/BlogCard/BlogCard";
 import React, { useState, useEffect, useRef, MutableRefObject } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { isMobileScreen } from "@/utils/isMobileScreen";
-import { useSwiper } from "swiper/react";
 import "swiper/css";
 import { Navigation } from "swiper/modules";
 import Link from "next/link";
-import { FaArrowRightLong } from "react-icons/fa6";
-// import { useQuery } from "react-query";
-// import getBlogs from "@/hooks/query/useGetBlogs";
-
-const SwiperButtonNext = ({ children }: any) => {
-  const swiper = useSwiper();
-  return (
-    <button
-      onClick={() => swiper.slideNext()}
-      className="w-10 absolute right-0 rounded-full bg-[#F2D9B5] border-[#D8C09F] border-[1px] border-solid p-3 color-[#0E424A]"
-    >
-      {children}
-      <FaArrowRightLong />
-    </button>
-  );
-};
-
-const SwiperButtonPrevious = ({ children }: any) => {
-  const swiper = useSwiper();
-  return (
-    <button
-      onClick={() => swiper.slidePrev()}
-      className="w-10 absolute left-0 rounded-full rotate-180 bg-[#F2D9B5] border-[#D8C09F] border-[1px] border-solid p-3 color-[#0E424A]"
-    >
-      {children}
-      <FaArrowRightLong />
-    </button>
-  );
-};
+import { HiOutlineArrowRight } from "react-icons/hi";
 
 export const Blogs: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
+
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    if (swiperRef.current) {
+      swiperRef.current.on("slideChange", () => {
+        setActiveIndex(swiperRef.current.activeIndex);
+      });
+    }
+  }, []);
+
   const { items } = BLOG_CONFIG;
 
   const swiperRef: MutableRefObject<any> = useRef(null);
@@ -51,13 +33,13 @@ export const Blogs: React.FC = () => {
 
   return (
     <div className="bg-[#FBF8F6] z-0 flex justify-center flex-col items-center pt-[60px] md:px-28">
-      <h1 className="text-black font-garnett font-extrabold text-3xl mb-12">
+      <h1 className="text-black font-garnett font-bold text-3xl mb-12">
         Stay Informed
       </h1>
 
       <div className="w-full block lg:w-full xl:w-[1100px]">
         <Swiper
-          onSwiper={(swiper) => {
+          onSwiper={(swiper: any) => {
             swiperRef.current = swiper;
           }}
           slidesPerView={isMobile ? 1.4 : 4}
@@ -74,24 +56,41 @@ export const Blogs: React.FC = () => {
         </Swiper>
 
         {/* //TODO: make icon btn  */}
-        <div className="relative top-[-140px]">
-          <button
-            onClick={() => swiperRef.current?.slideNext()}
-            className="hidden md:block w-10 absolute right-[-60px] rounded-full bg-[#F2D9B5] border-[#D8C09F] border-[1px] border-solid p-3 color-[#0E424A]"
+        <div className="hidden md:block relative top-[-170px]">
+          <div
+            className={activeIndex === 3 ? "hidden" : "absolute right-[-60px]"}
           >
-            <FaArrowRightLong />
-          </button>
+            <div className="bg-black w-[35px] h-[35px] blur-sm rounded-full relative left-[8px] top-[-1.5px]"></div>
+            <button
+              onClick={() => {
+                swiperRef.current?.slideNext();
+                console.log(swiperRef.current.activeIndex);
+              }}
+              className=" text-[#0E424A] rounded-full relative top-[-45px] bg-[#F2D9B5] border-[#D8C09F] border-[1px] border-solid p-3 color-[#0E424A]"
+            >
+              <HiOutlineArrowRight size={18} />
+            </button>
+          </div>
 
-          <button
-            onClick={() => swiperRef.current?.slidePrev()}
-            className="hidden md:block w-10 absolute left-[-60px] rotate-180 rounded-full bg-[#F2D9B5] border-[#D8C09F] border-[1px] border-solid p-3 color-[#0E424A]"
+          <div
+            className={activeIndex === 0 ? "hidden" : "absolute left-[-80px]"}
           >
-            <FaArrowRightLong />
-          </button>
+            <div className="bg-black w-[38px] h-[38px] blur-sm rounded-full relative right-[1px] top-[-1.5px]"></div>
+            <button
+              onClick={() => swiperRef.current?.slidePrev()}
+              className=" text-[#0E424A] rounded-full rotate-180 relative top-[-45px] bg-[#F2D9B5] border-[#D8C09F] border-[1px] border-solid p-3 color-[#0E424A]"
+            >
+              <HiOutlineArrowRight size={18} />
+            </button>
+          </div>
         </div>
       </div>
 
-      <Link target="_blank" href={"https://getbelong.com/blog"} className="mb-4">
+      <Link
+        target="_blank"
+        href={"https://getbelong.com/blog"}
+        className="mb-4"
+      >
         <Button variant="outline" size={"sm"} className="mt-16 font-garnett">
           View all blogs
         </Button>
