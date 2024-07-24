@@ -19,7 +19,8 @@ export const BlogCard = ({ cardInfo }: any) => {
           {title.length > 50 ? `${title.slice(0, 50)}...` : title}{" "}
         </p>
         <p className="text-left  font-garnett font-medium text-[#7E7C7B] text-sm">
-          {formatDate(pubDate)} • 2 min read
+          {formatDate(pubDate)} 
+          {/* • 2 min read */}
         </p>
       </div>
     </Link>

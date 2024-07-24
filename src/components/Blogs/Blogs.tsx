@@ -51,13 +51,13 @@ export const Blogs: React.FC = () => {
 
   return (
     <div className="bg-[#FBF8F6] z-0 flex justify-center flex-col items-center pt-[60px] md:px-28">
-      <h1 className="text-black font-garnett font-extrabold text-3xl mb-12">
+      <h1 className="text-black font-garnett font-bold text-3xl mb-12">
         Stay Informed
       </h1>
 
       <div className="w-full block lg:w-full xl:w-[1100px]">
         <Swiper
-          onSwiper={(swiper) => {
+          onSwiper={(swiper: any) => {
             swiperRef.current = swiper;
           }}
           slidesPerView={isMobile ? 1.4 : 4}
@@ -91,7 +91,11 @@ export const Blogs: React.FC = () => {
         </div>
       </div>
 
-      <Link target="_blank" href={"https://getbelong.com/blog"} className="mb-4">
+      <Link
+        target="_blank"
+        href={"https://getbelong.com/blog"}
+        className="mb-4"
+      >
         <Button variant="outline" size={"sm"} className="mt-16 font-garnett">
           View all blogs
         </Button>

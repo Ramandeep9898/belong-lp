@@ -13,7 +13,7 @@ export const Navbar = () =>{
                 <Button variant={"ghost"} className=" font-garnett">Blogs</Button>
                 
                 </Link>
-                <Button className=" font-garnett">Get Early Access</Button>
+                {/* <Button className=" font-garnett">Get Early Access</Button> */}
 
             </div>
         </nav>
