@@ -57,7 +57,7 @@ export const Blogs: React.FC = () => {
 
       <div className="w-full block lg:w-full xl:w-[1100px]">
         <Swiper
-          onSwiper={(swiper) => {
+          onSwiper={(swiper: any) => {
             swiperRef.current = swiper;
           }}
           slidesPerView={isMobile ? 1.4 : 4}
@@ -91,7 +91,11 @@ export const Blogs: React.FC = () => {
         </div>
       </div>
 
-      <Link target="_blank" href={"https://getbelong.com/blog"} className="mb-4">
+      <Link
+        target="_blank"
+        href={"https://getbelong.com/blog"}
+        className="mb-4"
+      >
         <Button variant="outline" size={"sm"} className="mt-16 font-garnett">
           View all blogs
         </Button>

@@ -2,7 +2,7 @@ import buildingsLeft from "@/assets/lp/hero/buildingsLeft.png";
 import buildingsRight from "@/assets/lp/hero/buildingsRight.png";
 import cloudsLeft from "@/assets/lp/hero/cloudsLeft.png";
 import cloudsRight from "@/assets/lp/hero/cloudsRight.png";
-import cloudsMobile from "@/assets/lp/hero/cloudsMobile.png"
+import cloudsMobile from "@/assets/lp/hero/cloudsMobile.png";
 import logo from "@/assets/logoBlackNav.svg";
 import Image from "next/image";
 import { Button } from "../../Button/Button";
@@ -49,7 +49,7 @@ export const Header = () => {
       className="flex justify-center items-center w-full"
     >
       <div
-        className="flex justify-center items-center w-full shadow-[inset_0_-2px_4px_2px_rgba(0,0,0,0.4)]"
+        className="flex justify-center items-center w-full"
         style={{
           background: `url(${bgTexture.src})`,
         }}
@@ -174,81 +174,82 @@ export const HeaderMobile = () => {
         background: "linear-gradient(130deg, #E5CDA8 9.14%, #BA9E73 72.99%)",
       }}
     >
-      <div className="w-full relative transition-all duration-[3000ms] md:hidden block"
-      style={{
-        height: isExpanded ? "100vh" : "80vh",
-        backgroundImage: `url(${bgTexture.src})`,
-      }}
+      <div
+        className="w-full relative transition-all duration-[3000ms] md:hidden block"
+        style={{
+          height: isExpanded ? "100vh" : "80vh",
+          backgroundImage: `url(${bgTexture.src})`,
+        }}
       >
-      {/* <Navbar/> */}
-      
+        {/* <Navbar/> */}
 
-      <Image
-        priority
-        src={cloudsMobile}
-        alt=""
-        className="absolute  bottom-36 w-full objex1ct-cover rounded-b-xl z-20 transition-all will-change-transform duration-[3000ms]"
-        style={{
-          opacity: isExpanded ? 0 : 1,
-          top: isExpanded ? "10rem" : "16rem",
-        }}
-      />
+        <Image
+          priority
+          src={cloudsMobile}
+          alt=""
+          className="absolute  bottom-36 w-full objex1ct-cover rounded-b-xl z-20 transition-all will-change-transform duration-[3000ms]"
+          style={{
+            opacity: isExpanded ? 0 : 1,
+            top: isExpanded ? "10rem" : "16rem",
+          }}
+        />
 
-      <Image
-        priority
-        src={mobileBuilding}
-        alt=""
-        className={`absolute bottom-[-100px] left-0 w-[500px] object-cover z-30 rounded-b-xl ${
-          isTransition ? "transition-all" : "transition-none"
-        } will-change-transform duration-[3000ms]`}
-        style={{
-          // transition: isTransition ? 'all' : 'none',
-          bottom: isExpanded ? "-650px" : `-${Math.min(40, scrollY / 4 + 5)}px`,
-        }}
-      />
+        <Image
+          priority
+          src={mobileBuilding}
+          alt=""
+          className={`absolute bottom-[-100px] left-0 w-[500px] object-cover z-30 rounded-b-xl ${
+            isTransition ? "transition-all" : "transition-none"
+          } will-change-transform duration-[3000ms]`}
+          style={{
+            // transition: isTransition ? 'all' : 'none',
+            bottom: isExpanded
+              ? "-650px"
+              : `-${Math.min(40, scrollY / 4 + 5)}px`,
+          }}
+        />
 
-      <Image
-        priority
-        src={card}
-        alt=""
-        className={`absolute left-[52%] transform -translate-x-1/2 w-[310px] z-20 object-cover rounded-b-xl ${
-          isTransition ? "transition-all" : "transition-none"
-        } will-change-transform duration-[2000ms] ${
-          scrollY < 256
-            ? "animate-[oscillate_2s_infinite_cubic-bezier(0.42,0,0.58,1)]"
-            : ""
-        }`}
-        style={{
-          bottom: isExpanded ? "-750px" : `-${Math.min(200, scrollY / 2)}px`,
-        }}
-      />
-      <div className="absolute top-0 z-[5000000] w-full">
-        <div className="relative flex w-full justify-center items-center z-20 flex-col">
-          <div
-            className="fixed flex w-full mt-8 transition-all duration-[3000ms]"
-            style={{
-              top: isExpanded ? "-250px" : "0",
-            }}
-          >
-            <IoMenuOutline className="h-8 w-8 ml-8" />{" "}
-            <Image
-              src={logo}
-              className="h-8 w-auto mx-auto -translate-x-6"
-              alt=""
-            />
+        <Image
+          priority
+          src={card}
+          alt=""
+          className={`absolute left-[52%] transform -translate-x-1/2 w-[310px] z-20 object-cover rounded-b-xl ${
+            isTransition ? "transition-all" : "transition-none"
+          } will-change-transform duration-[2000ms] ${
+            scrollY < 256
+              ? "animate-[oscillate_2s_infinite_cubic-bezier(0.42,0,0.58,1)]"
+              : ""
+          }`}
+          style={{
+            bottom: isExpanded ? "-750px" : `-${Math.min(200, scrollY / 2)}px`,
+          }}
+        />
+        <div className="absolute top-0 z-[5000000] w-full">
+          <div className="relative flex w-full justify-center items-center z-20 flex-col">
+            <div
+              className="fixed flex w-full mt-8 transition-all duration-[3000ms]"
+              style={{
+                top: isExpanded ? "-250px" : "0",
+              }}
+            >
+              <IoMenuOutline className="h-8 w-8 ml-8" />{" "}
+              <Image
+                src={logo}
+                className="h-8 w-auto mx-auto -translate-x-6"
+                alt=""
+              />
+            </div>
+            <h1
+              className="relative  font-garnett font-extrabold text-5xl w-[310px] text-center mb-16 mt-20 text-[#2D2D2C] transition-all will-change-transform duration-[3000ms]"
+              style={{
+                top: isExpanded ? "-800px" : "30px",
+              }}
+            >
+              {Heading}
+            </h1>
           </div>
-          <h1
-            className="relative  font-garnett font-extrabold text-5xl w-[310px] text-center mb-16 mt-20 text-[#2D2D2C] transition-all will-change-transform duration-[3000ms]"
-            style={{
-              top: isExpanded ? "-800px" : "30px",
-            }}
-          >
-            {Heading}
-          </h1>
         </div>
       </div>
-      </div>
-
     </div>
   );
 };
