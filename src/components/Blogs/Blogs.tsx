@@ -64,7 +64,6 @@ export const Blogs: React.FC = () => {
             <button
               onClick={() => {
                 swiperRef.current?.slideNext();
-                console.log(swiperRef.current.activeIndex);
               }}
               className=" text-[#0E424A] rounded-full relative top-[-45px] bg-[#F2D9B5] border-[#D8C09F] border-[1px] border-solid p-3 color-[#0E424A]"
             >
