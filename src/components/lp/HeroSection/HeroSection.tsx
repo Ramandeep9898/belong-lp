@@ -14,7 +14,7 @@ import BtnShadow from "@/assets/shadow.svg";
 import card from "@/assets/lp/hero/card.png";
 import bgTexture from "@/assets/bg-texture.png";
 
-const Heading = "First NRI focused  card";
+const Heading = "First NRI focused card";
 
 export const Header = () => {
   const [isExpanded, setIsExpanded] = useState(true);
@@ -44,6 +44,7 @@ export const Header = () => {
   return (
     <div
       style={{
+        boxShadow: " 0px -6px 12px 0px #00000040 inset",
         background: "linear-gradient(130deg, #E5CDA8 9.14%, #BA9E73 72.99%)",
       }}
       className="flex justify-center items-center w-full"
@@ -114,7 +115,7 @@ export const Header = () => {
             style={{
               bottom: isExpanded
                 ? "-750px"
-                : `-${Math.min(200, scrollY / 2)}px`,
+                : `-${Math.min(200, scrollY / 2) + 130}px`,
             }}
             priority
             height={400}
