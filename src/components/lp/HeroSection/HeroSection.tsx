@@ -14,7 +14,7 @@ import BtnShadow from "@/assets/shadow.svg";
 import card from "@/assets/lp/hero/card.png";
 import bgTexture from "@/assets/bg-texture.png";
 
-const Heading = "First NRI focused card";
+const Heading = "First Card Made for NRIs";
 
 export const Header = () => {
   const [isExpanded, setIsExpanded] = useState(true);
