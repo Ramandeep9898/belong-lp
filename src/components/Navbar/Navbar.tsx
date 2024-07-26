@@ -13,7 +13,7 @@ export const Navbar = () => {
             Blogs
           </Button>
         </Link>
-        <Button className=" font-garnett">Get Early Access</Button>
+        {/* <Button className=" font-garnett">Get Early Access</Button> */}
       </div>
     </nav>
   );
